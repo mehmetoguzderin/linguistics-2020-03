@@ -11,7 +11,7 @@
             }
         }
     })
-    let reshape = x => x.replace("؟", "? ").replace("\u200F", "");
+    let reshape = x => x.split("؟").join("?").split("\u200F").join("");
     setInterval(() => {
         if (document.getElementsByClassName
             ("tlid-translation translation")[0] && document.getElementsByClassName
@@ -22,7 +22,7 @@
 
             let transliteration_i = translation;
             map.forEach((value, key) => {
-                transliteration_i = transliteration_i.replace(key, value["i"][1]);
+                transliteration_i = transliteration_i.split(key).join(value["i"][1]);
             });
             transliteration_i = transliteration_i.split("").map(c => {
                 let replacement = null;
@@ -50,7 +50,7 @@
 
             transliteration_l = translation;
             map.forEach((value, key) => {
-                transliteration_l = transliteration_l.replace(key, value["l"]);
+                transliteration_l = transliteration_l.split(key).join(value["l"]);
             });
             transliteration_l = transliteration_l.split("").map(c => {
                 let replacement = null;
