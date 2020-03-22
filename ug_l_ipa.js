@@ -1,7 +1,11 @@
 (async function () {
-    return (await fetch("https://raw.githubusercontent.com/tyrkbodn/common-turkic-latin-alphabet/master/A_TO_L.json")).json();
+    return (await fetch("https://raw.githubusercontent.com/" +
+        "tyrkbodn/common-turkic-latin-alphabet/master/A_TO_L.json")).json();
 })().then(map_json => {
-    let map = new Map([...Object.entries(map_json)].sort((a, b) => b[0].length - a[0].length));
+    let map = new Map(
+        [...Object.entries(map_json)]
+            .sort((a, b) => b[0].length - a[0].length)
+    );
     map.forEach((value, key) => {
         if (key.length == 2) {
             if (key[0] == key[1]) {
@@ -12,11 +16,11 @@
         }
     })
     let reshape = x => x
-    .split("؟").join("?")
-    .split("،").join(",")
-    .split("«").join("\"")
-    .split("»").join("\"")
-    .split("\u200F").join("");
+        .split("؟").join("?")
+        .split("،").join(",")
+        .split("«").join("\"")
+        .split("»").join("\"")
+        .split("\u200F").join("");
     setInterval(() => {
         if (document.getElementsByClassName
             ("tlid-translation translation")[0] && document.getElementsByClassName
