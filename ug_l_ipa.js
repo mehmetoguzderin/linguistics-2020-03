@@ -11,7 +11,12 @@
             }
         }
     })
-    let reshape = x => x.split("؟").join("?").split("\u200F").join("");
+    let reshape = x => x
+    .split("؟").join("?")
+    .split("،").join(",")
+    .split("«").join("\"")
+    .split("»").join("\"")
+    .split("\u200F").join("");
     setInterval(() => {
         if (document.getElementsByClassName
             ("tlid-translation translation")[0] && document.getElementsByClassName
