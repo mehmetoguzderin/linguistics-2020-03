@@ -84,12 +84,22 @@
                 return replacement ? replacement : c;
             }).join("");
             transliteration_l = "\u200E" + reshape(transliteration_l);
-
-            document.getElementsByClassName
+            
+            innerText =
                 ("tlid-transliteration-content transliteration-content full")[1].innerText =
                 transliteration_l +
                 "\n" + "\n" + "\n" +
                 transliteration_i;
+            
+            if (document.getElementsByClassName
+                ("tlid-transliteration-content transliteration-content full")[1].innerText !=
+                innerText) {
+                document.getElementsByClassName
+                    ("tlid-transliteration-content transliteration-content full")[1].innerText =
+                    transliteration_l +
+                    "\n" + "\n" + "\n" +
+                    transliteration_i;
+            }
         }
     }, 512);
 });
