@@ -79,7 +79,7 @@
             document.getElementsByClassName
                 ("tlid-transliteration-content transliteration-content full")[1].innerText =
                 transliteration_l +
-                "\n" + "\n" +
+                "\n" + "\n" + "\n" +
                 transliteration_i;
         }
     }, 256);
