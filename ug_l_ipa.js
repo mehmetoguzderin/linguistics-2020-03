@@ -18,7 +18,7 @@
                 ("tlid-transliteration-content transliteration-content full")[1]) {
             let translation =
                 document.getElementsByClassName
-                    ("tlid-translation translation")[0].textContent;
+                    ("tlid-translation translation")[0].innerText;
 
             let transliteration_i = translation;
             map.forEach((value, key) => {
@@ -77,7 +77,7 @@
             transliteration_l = "\u200E" + reshape(transliteration_l);
 
             document.getElementsByClassName
-                ("tlid-transliteration-content transliteration-content full")[1].textContent =
+                ("tlid-transliteration-content transliteration-content full")[1].innerText =
                 transliteration_l +
                 "\n" + "\n" +
                 transliteration_i;
