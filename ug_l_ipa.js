@@ -11,7 +11,7 @@
             }
         }
     })
-    let reshape = x => x.replace("؟", "?").replace("\u200F", "");
+    let reshape = x => x.replace("؟", "? ").replace("\u200F", "");
     setInterval(() => {
         if (document.getElementsByClassName
             ("tlid-translation translation")[0] && document.getElementsByClassName
