@@ -6,21 +6,30 @@
         [...Object.entries(map_json)]
             .sort((a, b) => b[0].length - a[0].length)
     );
+
     map.forEach((value, key) => {
         if (key.length == 2) {
-            if (key[0] == key[1]) {
-                if (!(key[0] in map)) {
-                    map.set(key[0], value);
-                }
+            if (!(key[1] in map)) {
+                map.set(key[1], value);
             }
         }
-    })
+    });
+
+    let map_regex = new Map(
+        [...map.entries()]
+            .map(element => [new RegExp(element[0], 'g'), element[1]])
+            .sort((a, b) => b[0].source.length - a[0].source.length)
+    );
+    
     let reshape = x => x
         .split("؟").join("?")
         .split("،").join(",")
         .split("«").join("\"")
         .split("»").join("\"")
         .split("\u200F").join("");
+
+    let format = x => "\u200E" + "/" + reshape(x) + "/";
+    
     setInterval(() => {
         if (document.getElementsByClassName
             ("tlid-translation translation")[0] && document.getElementsByClassName
