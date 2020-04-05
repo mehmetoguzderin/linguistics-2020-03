@@ -20,7 +20,7 @@
             .map(element => [new RegExp(element[0], 'g'), element[1]])
             .sort((a, b) => b[0].source.length - a[0].source.length)
     );
-    
+
     let reshape = x => x
         .split("؟").join("?")
         .split("،").join(",")
@@ -29,7 +29,7 @@
         .split("\u200F").join("");
 
     let format = x => "\u200E" + "/" + reshape(x) + "/";
-    
+
     setInterval(() => {
         if (document.getElementsByClassName
             ("tlid-translation translation")[0] && document.getElementsByClassName
@@ -93,13 +93,13 @@
                 return replacement ? replacement : c;
             }).join("");
             transliteration_l = "\u200E" + reshape(transliteration_l);
-            
+
             innerText =
                 ("tlid-transliteration-content transliteration-content full")[1].innerText =
                 transliteration_l +
                 "\n" + "\n" + "\n" +
                 transliteration_i;
-            
+
             if (document.getElementsByClassName
                 ("tlid-transliteration-content transliteration-content full")[1].innerText !=
                 innerText) {
