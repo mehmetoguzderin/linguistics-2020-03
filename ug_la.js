@@ -50,9 +50,9 @@ const uyghur_to_latin = [
 
 const map = new Map(uyghur_to_latin);
 
-let transliteration_container = "tlid-transliteration-content transliteration-content full";
+let transliteration_container = "kO6q6e"; // "tlid-transliteration-content transliteration-content full";
 
-let translation_container = "tlid-translation translation";
+let translation_container = "J0lOec"; // "tlid-translation translation";
 
 let translation = "";
 
