@@ -52,7 +52,7 @@ const map = new Map(uyghur_to_latin);
 
 let transliteration_container = "kO6q6e"; // "tlid-transliteration-content transliteration-content full";
 
-let translation_container = "J0lOec"; // "tlid-translation translation";
+let translation_container = "ryNqvb"; // "tlid-translation translation";
 
 let translation = "";
 
